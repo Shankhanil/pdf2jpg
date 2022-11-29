@@ -52,6 +52,6 @@ if __name__ == "__main__":
             image.save(os.path.join(opts.dump, f"{count+1}.jpg"))
             count += 1
     else:
-        dumppath = os.path.join(opts.dump, f"{opts.pages }.jpg")
+        dumppath = os.path.join(opts.dump, f"{os.path.basename(opts.source).split('.')[0]}_{str(opts.pages) }.jpg")
         images[opts.pages - 1].save(dumppath)
         print(f"Image saved at {dumppath}")
